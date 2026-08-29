@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>이야기</title>
-<meta name="description" content="">
+<title>글 상세 | SILVER MOON</title>
+<meta name="description" content="SILVER MOON의 디자인 오브제와 스테인리스 소재에 관한 글을 읽을 수 있는 동적 상세 페이지입니다.">
 <meta name="author" content="">
-<link rel="canonical" href="">
+<!-- SEO START -->
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/story/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="">
-<meta property="og:description" content="">
-<meta property="og:url" content="">
+<meta property="og:title" content="글 상세 | SILVER MOON">
+<meta property="og:description" content="SILVER MOON의 디자인 오브제와 스테인리스 소재에 관한 글을 읽을 수 있는 동적 상세 페이지입니다.">
+<meta property="og:url" content="https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/story/">
+<!-- SEO END -->
 <meta name="theme-color" content="#050505">
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="blog.css">
@@ -127,7 +130,9 @@
   function setMeta(post){
     var title = String(post.title || '이야기');
     var desc = String(post.description || post.summary || '').slice(0, 160);
-    var url = location.origin + location.pathname + '?id=' + encodeURIComponent(post.id || '');
+    var url = post.url
+      ? 'https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/story/' + String(post.url).replace(/^\.\//, '')
+      : 'https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/story/post.html?id=' + encodeURIComponent(post.id || '');
     var author = String(post.author || '').trim();
     document.title = title;
     setAttr('meta[name="description"]', 'content', desc);

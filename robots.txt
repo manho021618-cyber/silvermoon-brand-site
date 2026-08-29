@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /story/admin.html
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/sitemap.xml
