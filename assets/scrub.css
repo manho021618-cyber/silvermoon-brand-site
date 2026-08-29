@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    영상 스크럽판 부품 키트 — scrub.css
    실행DAY 2026-08-29 · https://runday.irumai.kr/260829/kit/scrub/
 
@@ -9,13 +9,13 @@
   --scrub-ink:     #ffffff;                       /* 영상 위 글자색 */
   --scrub-dim:     rgba(255,255,255,.72);         /* 보조 문장 · 킥커 */
   --scrub-bg:      #050505;                       /* 영상 로드 전 바탕 · 스크림 색 */
-  --scrub-scrim:   .58;                           /* 어두운 막 세기 0(없음)~1 */
+  --scrub-scrim:   .28;                           /* 원본 색을 살리면서 글자만 읽히는 정도 */
   --scrub-font:    Georgia, "Times New Roman", "Noto Serif KR", serif;                       /* 제목 서체 (예: "Noto Serif KR", serif) */
   --scrub-title:   clamp(56px, 7.5vw, 120px);        /* 제목 크기 */
   --scrub-pad:     max(32px, calc((100vw - 1440px) / 2));        /* 좌우 여백 */
   --scrub-align:   left;                          /* left | center (문구 정렬) */
   --scrub-justify: start;                         /* start | center (문구 덩어리 위치) */
-  --scrub-accent:  #ffffff;                       /* 버튼 바탕 */
+  --scrub-accent:  #c6c8c8;                       /* 실버문 포인트색 */
   --scrub-accent-ink: #111111;                    /* 버튼 글자 */
 }
 
@@ -27,8 +27,8 @@ body[data-page="home"] .site-header {
   background: transparent;
   border-bottom-color: rgba(255,255,255,.22);
 }
-body[data-page="home"] .site-header .brand { filter: grayscale(1) brightness(0) invert(1); }
-.rd-scrub__poster, .rd-scrub__video { filter: grayscale(1) contrast(1.06); }
+body[data-page="home"] .site-header .brand { filter: brightness(0) invert(1); }
+.rd-scrub__poster, .rd-scrub__video { filter: none; }
 .rd-scrub__band h1, .rd-scrub__band h2 { font-weight: 400; letter-spacing: -.055em; }
 .rd-scrub__band h1 em { font-weight: 400; }
 

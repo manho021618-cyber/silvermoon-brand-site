@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    영상 스크럽판 부품 키트 — scrub.js
    실행DAY 2026-08-29 · https://runday.irumai.kr/260829/kit/scrub/
 
@@ -103,7 +103,7 @@
       return;
     }
     sc.classList.add('rd-scrub--live');
-    sc.style.height = ((screens + 1) * 100) + 'svh';
+    sc.style.height = (screens * 100) + 'svh';
 
     var S = { video: null, ready: false, loading: false, target: 0, current: 0 };
 
