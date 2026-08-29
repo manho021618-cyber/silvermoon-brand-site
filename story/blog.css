@@ -230,6 +230,16 @@
   margin: 0 0 1.8em;
 }
 
+.blog-post-page .body a {
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--silver);
+  color: var(--white);
+}
+
+.blog-post-page .body a:hover {
+  color: var(--silver);
+}
+
 .blog-post-page .body h2 {
   margin: 2.4em 0 .9em;
   color: var(--white);

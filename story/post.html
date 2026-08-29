@@ -48,7 +48,30 @@
     return d.getFullYear() + '. ' + (d.getMonth()+1) + '. ' + d.getDate() + '.';
   }
 
-  // 초경량 마크다운: 빈 줄=문단, "## "=소제목, "- "=리스트. 전부 textContent로 삽입(XSS-safe).
+  // 초경량 마크다운: 빈 줄=문단, "## "=소제목, "- "=목록, [문구](주소)=안전한 링크.
+  function appendInline(parent, text){
+    var pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+    var cursor = 0;
+    var match;
+    while ((match = pattern.exec(text))){
+      parent.appendChild(document.createTextNode(text.slice(cursor, match.index)));
+      var href = match[2].trim();
+      if (/^(?:https?:\/\/|\.\.?\/)/i.test(href)){
+        var link = el('a', null, match[1]);
+        link.href = href;
+        if (/^https?:\/\//i.test(href)){
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+        }
+        parent.appendChild(link);
+      } else {
+        parent.appendChild(document.createTextNode(match[0]));
+      }
+      cursor = pattern.lastIndex;
+    }
+    parent.appendChild(document.createTextNode(text.slice(cursor)));
+  }
+
   function renderBody(src){
     var box = el('div','body');
     var blocks = String(src || '').replace(/\r\n/g,'\n').split(/\n\s*\n/);
@@ -58,12 +81,18 @@
       var lines = block.split('\n');
       if (lines.every(function(l){ return /^- /.test(l.trim()); })){
         var ul = el('ul');
-        lines.forEach(function(l){ ul.appendChild(el('li', null, l.trim().slice(2))); });
+        lines.forEach(function(l){
+          var li = el('li');
+          appendInline(li, l.trim().slice(2));
+          ul.appendChild(li);
+        });
         box.appendChild(ul);
       } else if (/^## /.test(block)){
         box.appendChild(el('h2', null, block.slice(3).trim()));
       } else {
-        box.appendChild(el('p', null, block));
+        var paragraph = el('p');
+        appendInline(paragraph, block);
+        box.appendChild(paragraph);
       }
     });
     return box;
