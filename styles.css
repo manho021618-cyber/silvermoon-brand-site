@@ -111,8 +111,12 @@ p { max-width: 40ch; }
 .story-card { min-height: 360px; padding: 28px 28px 40px 0; border-right: 1px solid var(--silver); }
 .story-card + .story-card { padding-left: 28px; }
 .story-card:last-child { border-right: 0; }
+.story-card-link { min-height: 292px; display: block; }
 .story-date { margin: 0 0 64px; color: var(--silver); }
 .story-category { margin: 0 0 10px; color: var(--silver); }
+.story-card h3 { margin: 0 0 18px; font-family: Georgia, "Times New Roman", "Noto Serif KR", serif; font-size: clamp(24px, 2.2vw, 36px); line-height: 1.28; font-weight: 400; letter-spacing: -.035em; }
+.story-card h3 + p { margin: 0; color: var(--silver); font-size: 12px; line-height: 1.8; }
+.story-loading { grid-column: 1 / -1; margin: 0; padding: 90px 0; color: var(--silver); text-align: center; font-size: 12px; }
 .story-card h3 { margin: 0 0 18px; max-width: 16ch; font-family: Georgia, "Times New Roman", "Noto Serif KR", serif; font-size: clamp(24px, 2.4vw, 38px); line-height: 1.25; font-weight: 400; letter-spacing: -.035em; }
 .story-card > p:last-child { margin: 0; color: var(--silver); font-size: 12px; }
 
@@ -323,6 +327,7 @@ p { max-width: 40ch; }
   .moon-orbit { width: 145vw; }
   .story-grid, .principle-grid { grid-template-columns: 1fr; }
   .story-card, .story-card + .story-card, .principle, .principle + .principle { min-height: auto; padding: 28px 0 48px; border-right: 0; border-bottom: 1px solid var(--silver); }
+  .story-card-link { min-height: 0; }
   .story-date { margin-bottom: 38px; }
   .principle h3 { margin-top: 42px; }
   .contact-band-inner { min-height: 78vh; align-items: flex-start; flex-direction: column; justify-content: center; }

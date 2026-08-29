@@ -148,6 +148,65 @@ async function loadProducts() {
 
 loadProducts();
 
+const homeStories = document.querySelector('[data-home-stories]');
+
+function formatStoryDate(dateValue) {
+  const date = new Date(`${dateValue}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return dateValue || '';
+  return new Intl.DateTimeFormat('ko-KR', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).format(date).replace(/\. /g, '. ');
+}
+
+function createStoryCard(post, index) {
+  const article = document.createElement('article');
+  article.className = `story-card${index === 1 ? ' reveal--delay' : index === 2 ? ' reveal--long-delay' : ''}`;
+  const target = post.url ? `story/${post.url}` : `story/post.html?id=${encodeURIComponent(post.id || '')}`;
+  const link = document.createElement('a');
+  link.className = 'story-card-link';
+  link.href = target;
+  const date = document.createElement('time');
+  date.className = 'story-date';
+  date.dateTime = post.date || '';
+  date.textContent = formatStoryDate(post.date);
+  const category = document.createElement('p');
+  category.className = 'story-category';
+  category.textContent = Array.isArray(post.tags) && post.tags.length ? post.tags[0] : 'JOURNAL';
+  const title = document.createElement('h3');
+  title.textContent = post.title || '(제목 없음)';
+  const summary = document.createElement('p');
+  summary.textContent = post.summary || '';
+  link.append(date, category, title, summary);
+  article.append(link);
+  return article;
+}
+
+async function loadHomeStories() {
+  if (!homeStories) return;
+  try {
+    const response = await fetch('story/posts.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const posts = await response.json();
+    if (!Array.isArray(posts)) throw new Error('이야기 데이터 형식이 올바르지 않습니다.');
+    const latestPosts = posts
+      .slice()
+      .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')))
+      .slice(0, 3);
+    homeStories.replaceChildren(...latestPosts.map(createStoryCard));
+  } catch (error) {
+    console.error('이야기를 불러오지 못했습니다.', error);
+    const message = document.createElement('p');
+    message.className = 'story-loading';
+    message.setAttribute('role', 'alert');
+    message.textContent = '최신 이야기를 불러오지 못했습니다. 잠시 후 다시 확인해주세요.';
+    homeStories.replaceChildren(message);
+  }
+}
+
+loadHomeStories();
+
 const contactForm = document.querySelector('[data-contact-form]');
 if (contactForm) {
   const params = new URLSearchParams(window.location.search);

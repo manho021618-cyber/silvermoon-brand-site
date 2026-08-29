@@ -7,7 +7,9 @@
 - `index.html` — 홈과 대표 제품
 - `about.html` — 브랜드 및 운영자 소개
 - `products.html` — `products.json`을 읽어 만드는 제품 목록
-- `stories.html` — 브랜드 이야기와 블로그 목록
+- `story/index.html` — `story/posts.json`을 읽어 만드는 블로그 목록
+- `story/post.html` — 블로그 글 상세
+- `story/admin.html` — 블로그 관리 원본 도구
 - `contact.html` — 이메일 문의 폼
 
 ## 미리보기
@@ -26,6 +28,10 @@
   "url": "https://구매-링크"
 }
 ```
+
+## 이야기 추가
+
+`story/posts.json`에 글을 추가하면 블로그 목록과 홈의 최신 이야기 영역에 함께 반영됩니다. 홈에는 날짜가 가장 최신인 글을 최대 3개 표시합니다.
 
 ## 먼저 바꿀 내용
 

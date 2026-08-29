@@ -1,0 +1,74 @@
+.blog-page { color: var(--white); background: var(--black); }
+.blog-page .site-header { font-family: Arial, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif; line-height: 1.65; }
+.blog-page .wrap { width: min(100% - 48px, 860px); max-width: none; margin: 0 auto; padding: 0 0 var(--section-space); }
+.blog-page header.site { padding: 36px 0 0; align-items: center; }
+.blog-page .admin-link { padding-bottom: 4px; border-bottom: 1px solid var(--silver); color: var(--silver); font-family: "Courier New", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+.blog-page .admin-link:hover { color: var(--white); border-bottom-color: var(--white); }
+.blog-page .hero { width: auto; min-height: 56vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 10vh 0; border-bottom: 1px solid var(--silver); }
+.blog-page .hero .eyebrow { margin-bottom: 28px; color: var(--silver); font-family: "Courier New", monospace; font-size: 10px; letter-spacing: .18em; }
+.blog-page .hero h1 { max-width: 12ch; margin: 0; color: var(--white); font-family: Georgia, "Times New Roman", "Noto Serif KR", serif; font-size: clamp(58px, 8vw, 100px); line-height: .98; font-weight: 400; letter-spacing: -.06em; }
+.blog-page .hero p:last-child { max-width: 40ch; margin: 26px 0 0; color: var(--silver); font-size: 14px; }
+.blog-page .list { margin: 0; padding: 5vh 0 0; list-style: none; }
+.blog-page .card { border-bottom: 1px solid var(--silver); }
+.blog-page .card a { display: grid; grid-template-columns: 130px 1fr; gap: 36px; margin: 0; padding: 52px 0; border-radius: 0; color: inherit; transition: color .25s ease; }
+.blog-page .card a:hover { color: var(--silver); background: transparent; transform: none; }
+.blog-page .card time { grid-row: 1 / span 3; color: var(--silver); font-family: "Courier New", monospace; font-size: 10px; letter-spacing: .08em; }
+.blog-page .card h2 { margin: 0; color: currentColor; font-family: Georgia, "Times New Roman", "Noto Serif KR", serif; font-size: clamp(27px, 3.6vw, 43px); line-height: 1.25; font-weight: 400; letter-spacing: -.04em; }
+.blog-page .card a:hover h2 { color: currentColor; }
+.blog-page .card .summary { max-width: 40ch; margin: 12px 0 0; color: var(--silver); font-size: 13px; line-height: 1.8; }
+.blog-page .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+.blog-page .tag { padding: 4px 10px; border: 1px solid var(--silver); border-radius: 999px; color: var(--silver); font-family: "Courier New", monospace; font-size: 9px; letter-spacing: .05em; }
+.blog-page .empty, .blog-page .error { padding: 14vh 0; color: var(--silver); text-align: center; }
+.blog-page .site-footer { margin-top: 0; }
+
+.blog-post-page .wrap { width: min(100% - 48px, 680px); }
+.blog-post-page .top { padding: 60px 0 0; }
+.blog-post-page .back { display: inline-flex; padding-bottom: 5px; border-bottom: 1px solid currentColor; color: var(--silver); font-size: 11px; }
+.blog-post-page .back:hover { color: var(--white); }
+.blog-post-page article { padding-top: 12vh; }
+.blog-post-page .post-head time { color: var(--silver); font-family: "Courier New", monospace; font-size: 10px; letter-spacing: .1em; }
+.blog-post-page .post-head h1 { margin: 18px 0 24px; color: var(--white); font-family: Georgia, "Times New Roman", "Noto Serif KR", serif; font-size: clamp(42px, 7vw, 70px); line-height: 1.12; font-weight: 400; letter-spacing: -.055em; }
+.blog-post-page .post-head .meta { color: var(--silver); font-size: 12px; }
+.blog-post-page .rule { width: 72px; margin: 48px 0 56px; border: 0; border-top: 1px solid var(--silver); }
+.blog-post-page .body { color: var(--white); font-size: 16px; line-height: 1.95; word-break: keep-all; }
+.blog-post-page .body p { max-width: 100%; margin: 0 0 1.8em; }
+.blog-post-page .body h2 { margin: 2.4em 0 .9em; color: var(--white); font-family: Georgia, "Times New Roman", "Noto Serif KR", serif; font-size: 28px; line-height: 1.45; font-weight: 400; letter-spacing: -.03em; }
+.blog-post-page .body ul { margin: 0 0 1.8em 1.2em; padding: 0; }
+.blog-post-page .body li { margin-bottom: .55em; }
+.blog-post-page .body li::marker { color: var(--silver); }
+.blog-post-page section.faq { margin-top: 80px; }
+.blog-post-page section.faq h2, .blog-post-page section.sources h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+.blog-post-page section.faq details { padding: 18px 0; border-top: 1px solid var(--silver); }
+.blog-post-page section.faq details:last-of-type { border-bottom: 1px solid var(--silver); }
+.blog-post-page section.faq summary { cursor: pointer; font-size: 15px; }
+.blog-post-page section.faq summary::before { content: "Q. "; color: var(--silver); }
+.blog-post-page section.faq details p { margin: 12px 0 0; color: var(--silver); font-size: 14px; }
+.blog-post-page section.sources { margin-top: 48px; color: var(--silver); }
+.blog-post-page nav.pn { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 90px; padding-top: 14px; border-top: 1px solid var(--silver); }
+.blog-post-page nav.pn a { padding: 24px 0; border-radius: 0; }
+.blog-post-page nav.pn a:hover { color: var(--silver); background: transparent; }
+.blog-post-page nav.pn .dir { color: var(--silver); font-family: "Courier New", monospace; font-size: 9px; letter-spacing: .12em; }
+.blog-post-page nav.pn .pn-title { margin-top: 8px; font-family: Georgia, "Times New Roman", serif; font-size: 16px; font-weight: 400; }
+.blog-post-page .notfound { padding: 20vh 0; text-align: center; }
+.blog-post-page .notfound h1 { font-family: Georgia, "Times New Roman", serif; font-size: 32px; font-weight: 400; }
+.blog-post-page .notfound p { margin-inline: auto; color: var(--silver); }
+
+@media (max-width: 680px) {
+  .blog-page .wrap { width: calc(100% - 32px); }
+  .blog-page header.site { padding-top: 24px; }
+  .blog-page .hero { min-height: 56svh; padding: 12vh 0; }
+  .blog-page .hero h1 { font-size: clamp(50px, 15vw, 64px); }
+  .blog-page .card a { display: block; padding: 42px 0; }
+  .blog-page .card time { display: block; margin-bottom: 14px; }
+  .blog-page .card h2 { font-size: 30px; }
+  .blog-post-page .top { padding-top: 42px; }
+  .blog-post-page article { padding-top: 10vh; }
+  .blog-post-page .post-head h1 { font-size: 43px; }
+  .blog-post-page .body { font-size: 15px; }
+  .blog-post-page nav.pn { grid-template-columns: 1fr; }
+  .blog-post-page nav.pn .next { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-page *, .blog-page *::before, .blog-page *::after { animation: none !important; transition: none !important; }
+}
