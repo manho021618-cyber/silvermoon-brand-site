@@ -40,7 +40,7 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
 const insightButtons = document.querySelectorAll('[data-insight]');
 const insightCopy = document.querySelector('[data-insight-copy]');
 const insightMessages = {
-  global: '세계 곳곳의 좋은 스틸 오브제를 선별해 연결합니다.',
+  objects: '흔하지 않은 형태와 쓰임을 가진 오브제만 선별합니다.',
   steel: '차갑고 단단한 물성이 생활 속에서 오래 빛나도록 고릅니다.'
 };
 
