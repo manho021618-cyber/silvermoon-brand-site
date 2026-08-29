@@ -107,7 +107,11 @@ function createProductCard(product, index, layout) {
   price.className = 'product-price';
   price.textContent = priceFormatter.format(product.price);
   const buyLink = createLink(product.url, `${product.name} 구매하기`, layout === 'catalog' ? 'buy-button' : 'text-link product-buy-link');
-  buyLink.textContent = '구매하기';
+  buyLink.dataset.cartAdd = '';
+  buyLink.dataset.name = product.name;
+  buyLink.dataset.price = String(product.price);
+  buyLink.dataset.url = product.url;
+  buyLink.textContent = '장바구니 담기';
   const arrow = document.createElement('span');
   arrow.setAttribute('aria-hidden', 'true');
   arrow.textContent = ' ↗';
