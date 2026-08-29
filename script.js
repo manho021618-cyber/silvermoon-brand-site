@@ -59,27 +59,94 @@ insightButtons.forEach((button) => {
   button.addEventListener('focus', () => selectInsight(button));
 });
 
-const filterButtons = document.querySelectorAll('[data-filter]');
-const catalogCards = document.querySelectorAll('[data-category]');
-const catalogEmpty = document.querySelector('[data-catalog-empty]');
-
-filterButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const filter = button.dataset.filter;
-    let visibleCount = 0;
-    filterButtons.forEach((item) => {
-      const isActive = item === button;
-      item.classList.toggle('is-active', isActive);
-      item.setAttribute('aria-pressed', String(isActive));
-    });
-    catalogCards.forEach((card) => {
-      const isVisible = filter === 'all' || card.dataset.category.split(' ').includes(filter);
-      card.hidden = !isVisible;
-      if (isVisible) visibleCount += 1;
-    });
-    if (catalogEmpty) catalogEmpty.hidden = visibleCount !== 0;
-  });
+const productGrids = document.querySelectorAll('[data-products-grid]');
+const priceFormatter = new Intl.NumberFormat('ko-KR', {
+  style: 'currency',
+  currency: 'KRW',
+  maximumFractionDigits: 0
 });
+
+function createLink(url, label, className) {
+  const link = document.createElement('a');
+  link.href = url;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.className = className;
+  link.setAttribute('aria-label', `${label} 새 탭에서 열기`);
+  return link;
+}
+
+function createProductCard(product, index, layout) {
+  const card = document.createElement('article');
+  card.className = layout === 'catalog' ? 'shop-card' : 'product-card';
+
+  const imageLink = createLink(product.url, `${product.name} 구매 페이지`, layout === 'catalog' ? 'shop-card-image' : 'product-image');
+  const image = document.createElement('img');
+  image.src = product.image;
+  image.alt = product.name;
+  image.loading = 'lazy';
+  image.referrerPolicy = 'no-referrer';
+  const number = document.createElement('span');
+  number.className = layout === 'catalog' ? 'shop-card-number' : 'product-number';
+  number.textContent = String(index + 1).padStart(2, '0');
+  imageLink.append(image, number);
+
+  const info = document.createElement('div');
+  info.className = layout === 'catalog' ? 'shop-card-info' : 'product-meta';
+  const copy = document.createElement('div');
+  const kicker = document.createElement('p');
+  kicker.className = layout === 'catalog' ? 'shop-card-kicker' : '';
+  kicker.textContent = 'SMARTSTORE / SELECTED OBJECT';
+  const title = document.createElement(layout === 'catalog' ? 'h2' : 'h3');
+  title.textContent = product.name;
+  copy.append(kicker, title);
+
+  const purchase = document.createElement('div');
+  purchase.className = layout === 'catalog' ? 'shop-card-purchase' : 'product-card-purchase';
+  const price = document.createElement('strong');
+  price.className = 'product-price';
+  price.textContent = priceFormatter.format(product.price);
+  const buyLink = createLink(product.url, `${product.name} 구매하기`, layout === 'catalog' ? 'buy-button' : 'text-link product-buy-link');
+  buyLink.textContent = '구매하기';
+  const arrow = document.createElement('span');
+  arrow.setAttribute('aria-hidden', 'true');
+  arrow.textContent = ' ↗';
+  buyLink.append(arrow);
+  purchase.append(price, buyLink);
+  info.append(copy, purchase);
+  card.append(imageLink, info);
+  return card;
+}
+
+async function loadProducts() {
+  if (!productGrids.length) return;
+  try {
+    const response = await fetch('products.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const products = await response.json();
+    if (!Array.isArray(products)) throw new Error('제품 데이터 형식이 올바르지 않습니다.');
+
+    document.querySelectorAll('[data-product-count]').forEach((count) => {
+      count.textContent = String(products.length).padStart(2, '0');
+    });
+    productGrids.forEach((grid) => {
+      const limit = Number.parseInt(grid.dataset.limit, 10);
+      const visibleProducts = Number.isFinite(limit) ? products.slice(0, limit) : products;
+      grid.replaceChildren(...visibleProducts.map((product, index) => createProductCard(product, index, grid.dataset.layout)));
+    });
+  } catch (error) {
+    console.error('제품을 불러오지 못했습니다.', error);
+    productGrids.forEach((grid) => {
+      const message = document.createElement('p');
+      message.className = 'product-loading product-load-error';
+      message.setAttribute('role', 'alert');
+      message.textContent = '제품 정보를 불러오지 못했습니다. 잠시 후 다시 확인해주세요.';
+      grid.replaceChildren(message);
+    });
+  }
+}
+
+loadProducts();
 
 const contactForm = document.querySelector('[data-contact-form]');
 if (contactForm) {

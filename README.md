@@ -6,18 +6,31 @@
 
 - `index.html` — 홈과 대표 제품
 - `about.html` — 브랜드 및 운영자 소개
-- `products.html` — 제품 목록과 카테고리 필터
+- `products.html` — `products.json`을 읽어 만드는 제품 목록
 - `stories.html` — 브랜드 이야기와 블로그 목록
 - `contact.html` — 이메일 문의 폼
 
 ## 미리보기
 
-별도의 빌드 과정이 없습니다. `index.html`을 브라우저에서 바로 열거나, 간단한 정적 파일 서버로 폴더를 실행하면 됩니다.
+별도의 빌드 과정이 없습니다. 다만 제품 목록은 JSON을 읽으므로 `file://`로 직접 열기보다 간단한 정적 파일 서버나 GitHub Pages에서 확인해야 합니다.
+
+## 제품 추가
+
+제품은 `products.json` 배열에 아래 형식의 항목만 추가하면 홈의 대표 제품과 제품 페이지에 자동 반영됩니다. 홈에는 배열의 앞 3개가 표시됩니다.
+
+```json
+{
+  "name": "제품명",
+  "price": 120000,
+  "image": "https://이미지-주소.jpg",
+  "url": "https://구매-링크"
+}
+```
 
 ## 먼저 바꿀 내용
 
 1. `hello@silvermoon.kr`, `@silvermoon.objects`를 실제 연락처로 교체
-2. 제품명, 설명, 가격, 크기와 실제 제품 이미지 반영
+2. `products.json`에 실제 제품을 추가하거나 순서 변경
 3. 소개 문구와 SNS 주소 교체
 4. 이야기 글을 실제 게시물 링크로 연결
 
