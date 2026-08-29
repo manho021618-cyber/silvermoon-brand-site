@@ -8,19 +8,19 @@ SILVER MOON은 주방, 거실, 캠핑 공간에 오래 둘 수 있는 스테인�
 
 ## 페이지 안내
 
-- [홈](https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/): 브랜드 소개와 대표 제품, 최신 이야기를 봅니다.
-- [브랜드 이야기](https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/about.html): SILVER MOON이 시작된 이유와 제품을 고르는 기준을 설명합니다.
-- [제품](https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/products.html): 현재 소개하는 디자인 오브제와 스마트스토어 구매 링크를 봅니다.
-- [이야기](https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/story/): 디자인 오브제 선택과 스테인리스 관리에 관한 글을 읽습니다.
-- [연락하기](https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/contact.html): 이메일, Instagram과 스마트스토어 연결 정보를 확인합니다.
+- [홈](https://silvermoon-brand-site.vercel.app/): 브랜드 소개와 대표 제품, 최신 이야기를 봅니다.
+- [브랜드 이야기](https://silvermoon-brand-site.vercel.app/about.html): SILVER MOON이 시작된 이유와 제품을 고르는 기준을 설명합니다.
+- [제품](https://silvermoon-brand-site.vercel.app/products.html): 현재 소개하는 디자인 오브제와 스마트스토어 구매 링크를 봅니다.
+- [이야기](https://silvermoon-brand-site.vercel.app/story/): 디자인 오브제 선택과 스테인리스 관리에 관한 글을 읽습니다.
+- [연락하기](https://silvermoon-brand-site.vercel.app/contact.html): 이메일, Instagram과 스마트스토어 연결 정보를 확인합니다.
 
 ## 이야기(블로그)
 
-- [스테인리스 제품은 어떻게 관리해야 오래 깨끗할까요?](https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/story/stainless-care-guide.html): 미지근한 물과 순한 세제, 부드러운 천을 이용해 스테인리스의 손자국과 물얼룩을 관리하는 기본 방법을 정리합니다.
-- [미니멀 인테리어 포인트 오브제는 어떻게 고르나요?](https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/story/minimalist-design-object-guide.html): 장식을 늘리지 않고도 공간에 개성을 더하는 오브제를 고르기 위해 형태, 쓰임, 비례와 여백을 살펴봅니다.
-- [차가운 스틸 소재를 집 안에서 따뜻하게 연출하려면?](https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/story/warm-stainless-interior.html): 스틸의 선명한 질감은 살리면서 나무, 패브릭, 조명으로 공간의 온도를 부드럽게 조절하는 방법을 소개합니다.
-- [우리가 이 브랜드를 시작한 이유](https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/story/first-story.html): 작은 불편에서 시작된 고민이 어떻게 하나의 브랜드가 되었는지, 그 첫 마음을 기록합니다.
-- [패키지 하나를 바꾸는 데 석 달이 걸린 이야기](https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/story/package-improvement-story.html): 고객의 한 줄 후기에서 시작된 패키지 개선 프로젝트. 사소해 보이는 디테일에 오래 머문 이유를 적었습니다.
+- [스테인리스 제품은 어떻게 관리해야 오래 깨끗할까요?](https://silvermoon-brand-site.vercel.app/story/stainless-care-guide.html): 미지근한 물과 순한 세제, 부드러운 천을 이용해 스테인리스의 손자국과 물얼룩을 관리하는 기본 방법을 정리합니다.
+- [미니멀 인테리어 포인트 오브제는 어떻게 고르나요?](https://silvermoon-brand-site.vercel.app/story/minimalist-design-object-guide.html): 장식을 늘리지 않고도 공간에 개성을 더하는 오브제를 고르기 위해 형태, 쓰임, 비례와 여백을 살펴봅니다.
+- [차가운 스틸 소재를 집 안에서 따뜻하게 연출하려면?](https://silvermoon-brand-site.vercel.app/story/warm-stainless-interior.html): 스틸의 선명한 질감은 살리면서 나무, 패브릭, 조명으로 공간의 온도를 부드럽게 조절하는 방법을 소개합니다.
+- [우리가 이 브랜드를 시작한 이유](https://silvermoon-brand-site.vercel.app/story/first-story.html): 작은 불편에서 시작된 고민이 어떻게 하나의 브랜드가 되었는지, 그 첫 마음을 기록합니다.
+- [패키지 하나를 바꾸는 데 석 달이 걸린 이야기](https://silvermoon-brand-site.vercel.app/story/package-improvement-story.html): 고객의 한 줄 후기에서 시작된 패키지 개선 프로젝트. 사소해 보이는 디테일에 오래 머문 이유를 적었습니다.
 
 ## 공식 연결
 

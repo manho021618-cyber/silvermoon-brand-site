@@ -11,4 +11,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://silvermoon-brand-site-k0tp1ui6v-manho.vercel.app/sitemap.xml
+Sitemap: https://silvermoon-brand-site.vercel.app/sitemap.xml
