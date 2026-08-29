@@ -1,12 +1,12 @@
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const menuButton = document.querySelector('[data-menu-button]');
 const nav = document.querySelector('[data-nav]');
 
 function closeMenu() {
   document.body.classList.remove('nav-open');
-  if (menuButton) {
-    menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.querySelector('.sr-only').textContent = '메뉴 열기';
-  }
+  if (!menuButton) return;
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.querySelector('.sr-only').textContent = '메뉴 열기';
 }
 
 if (menuButton && nav) {
@@ -24,7 +24,9 @@ if (menuButton && nav) {
 }
 
 const revealItems = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window) {
+if (reducedMotion || !('IntersectionObserver' in window)) {
+  revealItems.forEach((item) => item.classList.add('is-visible'));
+} else {
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
@@ -33,9 +35,29 @@ if ('IntersectionObserver' in window) {
     });
   }, { threshold: 0.12 });
   revealItems.forEach((item) => revealObserver.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add('is-visible'));
 }
+
+const insightButtons = document.querySelectorAll('[data-insight]');
+const insightCopy = document.querySelector('[data-insight-copy]');
+const insightMessages = {
+  global: '세계 곳곳의 좋은 스틸 오브제를 선별해 연결합니다.',
+  steel: '차갑고 단단한 물성이 생활 속에서 오래 빛나도록 고릅니다.'
+};
+
+function selectInsight(selected) {
+  insightButtons.forEach((button) => {
+    const isActive = button === selected;
+    button.classList.toggle('is-active', isActive);
+    button.setAttribute('aria-pressed', String(isActive));
+  });
+  if (insightCopy) insightCopy.textContent = insightMessages[selected.dataset.insight];
+}
+
+insightButtons.forEach((button) => {
+  button.addEventListener('click', () => selectInsight(button));
+  button.addEventListener('mouseenter', () => selectInsight(button));
+  button.addEventListener('focus', () => selectInsight(button));
+});
 
 const filterButtons = document.querySelectorAll('[data-filter]');
 const catalogCards = document.querySelectorAll('[data-category]');
@@ -45,7 +67,11 @@ filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const filter = button.dataset.filter;
     let visibleCount = 0;
-    filterButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+    filterButtons.forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle('is-active', isActive);
+      item.setAttribute('aria-pressed', String(isActive));
+    });
     catalogCards.forEach((card) => {
       const isVisible = filter === 'all' || card.dataset.category.split(' ').includes(filter);
       card.hidden = !isVisible;
@@ -67,12 +93,11 @@ if (contactForm) {
     contactForm.elements.topic.value = '제품 및 입고';
     contactForm.elements.message.value = `${productNames[params.get('product')]}의 입고 일정과 상세 정보가 궁금합니다.`;
   }
-
   contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
     if (!contactForm.reportValidity()) return;
     const formData = new FormData(contactForm);
-    const subject = `[실버문 문의] ${formData.get('topic')}`;
+    const subject = `[SILVER MOON 문의] ${formData.get('topic')}`;
     const body = `이름: ${formData.get('name')}\n이메일: ${formData.get('email')}\n\n${formData.get('message')}`;
     const status = contactForm.querySelector('[data-form-status]');
     status.textContent = '이메일 앱을 여는 중입니다. 열리지 않으면 hello@silvermoon.kr로 보내주세요.';
