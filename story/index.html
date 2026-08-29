@@ -7,67 +7,11 @@
 <meta name="description" content="브랜드의 이야기를 기록합니다.">
 <meta name="theme-color" content="#050505">
 <link rel="stylesheet" href="../styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#faf9f6;
-  --ink:#1c1b18;
-  --accent:#8a5a2b;
-  --muted:#8b877e;
-  --serif:'Noto Serif KR',Georgia,serif;
-  --sans:'Pretendard','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;
-  -webkit-font-smoothing:antialiased;min-height:100vh}
-.wrap{max-width:680px;margin:0 auto;padding:0 24px 96px}
-header.site{display:flex;justify-content:space-between;align-items:baseline;
-  padding:48px 0 0}
-header.site .admin-link{font-size:12px;color:var(--muted);text-decoration:none;
-  letter-spacing:.04em;border-bottom:1px solid transparent}
-header.site .admin-link:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.hero{padding:72px 0 56px;border-bottom:1px solid rgba(0,0,0,.08)}
-.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:var(--accent);
-  text-transform:uppercase;margin-bottom:16px}
-.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,6vw,40px);
-  letter-spacing:-.01em;line-height:1.3}
-.hero p{margin-top:14px;color:var(--muted);font-size:15px}
-.list{list-style:none;padding-top:8px}
-.card{border-bottom:1px solid rgba(0,0,0,.08)}
-.card a{display:block;text-decoration:none;color:inherit;padding:36px 8px;
-  margin:0 -8px;border-radius:10px;transition:background .18s ease,transform .18s ease}
-.card a:hover{background:rgba(0,0,0,.028);transform:translateX(4px)}
-.card time{font-size:12.5px;color:var(--muted);letter-spacing:.06em}
-.card h2{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.45;
-  margin:8px 0 10px;transition:color .18s ease}
-.card a:hover h2{color:var(--accent)}
-.card .summary{font-size:14.5px;color:var(--muted);line-height:1.75;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.tags{margin-top:14px;display:flex;gap:6px;flex-wrap:wrap}
-.tag{font-size:11.5px;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);
-  border-radius:999px;padding:2px 10px;letter-spacing:.03em}
-.empty,.error{padding:96px 0;text-align:center;color:var(--muted);font-size:15px}
-.empty strong{display:block;font-family:var(--serif);font-size:19px;color:var(--ink);
-  margin-bottom:10px;font-weight:600}
-@media (max-width:480px){
-  .hero{padding:56px 0 40px}
-  .card a{padding:28px 4px;margin:0 -4px}
-}
-</style>
 <link rel="stylesheet" href="blog.css">
 <script>document.documentElement.classList.add('js');</script>
 <script src="../script.js" defer></script>
 </head>
-<!-- ═══════════════════════════════════════════════════════════
-     이 파일은 "혼자서도 열리는" 독립 페이지입니다.
-     내 사이트에 이식할 때는 아래 두 슬롯을 반드시 채우세요.
-       ① HEADER 슬롯 : 홈페이지의 로고 + 네비게이션 + 모바일 메뉴를 그대로 복사
-       ② FOOTER 슬롯 : 홈페이지의 푸터를 그대로 복사
-     색·서체는 :root 의 CSS 변수를 홈페이지 값으로 바꾸면 됩니다.
-     (본문 폭 --- .wrap 의 max-width 680px --- 은 가독성을 위해 유지 권장)
-     ═══════════════════════════════════════════════════════════ -->
+
 <body class="blog-page" data-page="stories">
 
 <a class="skip-link" href="#list">본문으로 바로가기</a>
