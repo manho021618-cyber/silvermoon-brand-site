@@ -226,7 +226,7 @@ if (contactForm) {
     const subject = `[SILVER MOON 문의] ${formData.get('topic')}`;
     const body = `이름: ${formData.get('name')}\n이메일: ${formData.get('email')}\n\n${formData.get('message')}`;
     const status = contactForm.querySelector('[data-form-status]');
-    status.textContent = '이메일 앱을 여는 중입니다. 열리지 않으면 hello@silvermoon.kr로 보내주세요.';
-    window.location.href = `mailto:hello@silvermoon.kr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    status.textContent = '이메일 앱을 여는 중입니다. 열리지 않으면 steelaura00@gmail.com로 보내주세요.';
+    window.location.href = `mailto:steelaura00@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
