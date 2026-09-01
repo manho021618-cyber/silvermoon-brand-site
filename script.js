@@ -136,6 +136,14 @@ async function loadProducts() {
     productGrids.forEach((grid) => {
       const limit = Number.parseInt(grid.dataset.limit, 10);
       const visibleProducts = Number.isFinite(limit) ? products.slice(0, limit) : products;
+      if (!visibleProducts.length) {
+        const message = document.createElement('p');
+        message.className = 'product-loading product-empty';
+        message.setAttribute('role', 'status');
+        message.textContent = '새 스마트스토어 상품을 준비 중입니다.';
+        grid.replaceChildren(message);
+        return;
+      }
       grid.replaceChildren(...visibleProducts.map((product, index) => createProductCard(product, index, grid.dataset.layout)));
     });
   } catch (error) {
