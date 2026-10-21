@@ -16,6 +16,7 @@ SILVER MOON은 주방, 거실, 캠핑 공간에 오래 둘 수 있는 스테인�
 
 ## 이야기(블로그)
 
+- [헤어라인 선반과 블랙 벽시계의 색 균형은 어떻게 맞추나요?](https://silvermoon-brand-site.vercel.app/story/hairline-shelf-black-clock-balance.html): 블랙 벽시계를 기준점으로 삼고 헤어라인 선반의 밝은 면과 여백, 주변 색을 조절해 균형을 잡는 방법입니다.
 - [스테인리스 제품은 어떻게 관리해야 오래 깨끗할까요?](https://silvermoon-brand-site.vercel.app/story/stainless-care-guide.html): 미지근한 물과 순한 세제, 부드러운 천을 이용해 스테인리스의 손자국과 물얼룩을 관리하는 기본 방법을 정리합니다.
 - [미니멀 인테리어 포인트 오브제는 어떻게 고르나요?](https://silvermoon-brand-site.vercel.app/story/minimalist-design-object-guide.html): 장식을 늘리지 않고도 공간에 개성을 더하는 오브제를 고르기 위해 형태, 쓰임, 비례와 여백을 살펴봅니다.
 - [차가운 스틸 소재를 집 안에서 따뜻하게 연출하려면?](https://silvermoon-brand-site.vercel.app/story/warm-stainless-interior.html): 스틸의 선명한 질감은 살리면서 나무, 패브릭, 조명으로 공간의 온도를 부드럽게 조절하는 방법을 소개합니다.
